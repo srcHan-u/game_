@@ -1,3 +1,4 @@
+"use strict"
 import { HERO } from "./game.js";
 
 const { log } = console;
@@ -47,7 +48,6 @@ class BasicCharacteristicsOfClasses {
 
 }
 
-log(o)
 function setClasses(classOfHero) {
   let value = classOfHero;
   // log(obj)
