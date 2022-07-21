@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./css/main.css">
+   <title>Game</title>
+</head>
+<body class="body">  
+   <section class="main-scene">
+      <div class="container-fluid">
+         <div class="row mb-3">
+            <div class="col-md-8">
+            <button type="button" class="btn btn-primary btn-sm">Primary</button>
+            </div>
+            <div class="col-md-4">
+               <div class="main-scene__controll controll-side">
+                  <div class="controll-side__heading">
+                     Controll
+                  </div>
+                  <form class="controll-side__form form-controll" action="#" method="post">
+                        <div>
+                           Выберите имя:
+                        </div>
+                        <input class="form-controll__name form-control form-control-sm" type="text" name="name" placeholder="name" id="controlSelectName">
+                        <div>
+                           Выберите расу:
+                        </div>
+                        <select class="form-select form-select-sm"  aria-label="choice race" id="controlSelectRace" >
+                           <option value="Empty" aria-checked=""></option>
+                           <option value="Эльф">Эльф</option>
+                           <option value="Человек">Человек</option>
+                           <option value="Орк">Орк</option>
+                           <option value="Алгорец">Алгорец</option>
+                           <option value="Гном">Гном</option>
+                         </select>
+                         <div>
+                           Выберите класс:
+                        </div>
+                         <select class="form-select form-select-sm" aria-label="choice class" id="controlSelectClass">
+                           <option value="Empty" aria-checked=""></option>
+                           <option value="Воин">Воин</option>
+                           <option value="Маг">Маг</option>
+                           <option value="Лучник">Лучник</option>
+                           <option value="Охотник">Охотник</option>
+                           <option value="Рыцарь">Рыцарь</option>
+                         </select>
+                        
+                        <button type="button" class="btn btn-outline-dark btn-lg" id="controllButtonStart">Start</button>
+                  </form>
+               </div>
+      
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <script src="./js/game.js" type="module"></script>
+   <script src="./js/controll.js" type="module"></script>
+   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
