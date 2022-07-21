@@ -15,6 +15,8 @@ export const HERO = {
     agility: 0,
     intelligence: 0,
     luck: 0.0,
+    armor: 0,
+    damage: 0,
   },
   equip: {
     weapon: {
@@ -32,9 +34,18 @@ export const HERO = {
     classAbilities: null,
     magicAbilities: null,
   },
+  sumArmor: function () {
+    return (this.totalArmor = this.equip.arms.armor + this.abilities.armor);
+  },
+  sumDamage: function () {
+    return (this.totalDamage =
+      this.equip.weapon.damage + this.abilities.damage);
+  },
 };
 
-const HERO_BAG = {
+
+
+export const HERO_BAG = {
   weapon: {},
   arms: {},
 };
@@ -47,6 +58,8 @@ export const BASIC_CHARACTERISTICS_OF_CLASSES = {
       agility: 5,
       intelligence: 15,
       luck: 0.25,
+      damage: 15 * 2,
+      armor: 4,
     },
   },
   warrior: {

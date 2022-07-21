@@ -1,8 +1,11 @@
 "use strict";
-import { HERO, BASIC_CHARACTERISTICS_OF_CLASSES} from "./hero/settings-of-hero.js";
-import {randomValue, log} from './general/help-functions.js';
+import {
+  HERO,
+  BASIC_CHARACTERISTICS_OF_CLASSES,
+  HERO_BAG,
+} from "./hero/settings-of-hero.js";
 
-
+import { randomValue, log, cloneOfObject} from "./general/help-functions.js";
 
 const controllButtonStart = document.querySelector("#controllButtonStart");
 const controlSelectRace = document.querySelector("#controlSelectRace");
@@ -10,6 +13,7 @@ const controlSelectClass = document.querySelector("#controlSelectClass");
 const controlSelectName = document.querySelector("#controlSelectName");
 const popupInfo = document.querySelector(".main-alert-info");
 const backgroundBlack = document.querySelector(".background_color_black");
+let cookie;
 
 controllButtonStart.addEventListener("click", () => {
   if (
@@ -31,23 +35,32 @@ backgroundBlack.addEventListener("click", () => {
   document.querySelector(".main-alert-info").classList.remove("active");
 });
 
-
-
 function setClasses(classOfHero) {
-  let value = classOfHero;
-  log(value)
+  const value = classOfHero;
+  const hero = HERO.abilities;
+  let basicCharacteristics;
   if (value === "Маг") {
-   //  HERO.totalDamage = obj.damage;
-   //  HERO.totalArmor = obj.armor;
+   basicCharacteristics = BASIC_CHARACTERISTICS_OF_CLASSES.magician; 
 
-   // BASIC_CHARACTERISTICS_OF_CLASSES
-    HERO.abilities.agility = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.agility;
-    HERO.abilities.strength = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.strength;
-    HERO.abilities.intelligence = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.intelligence;
-    HERO.abilities.luck = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.luck;
-    HERO.abilities.health = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.health;
-  }
+    // BASIC_CHARACTERISTICS_OF_CLASSES
+    hero.agility = basicCharacteristics.abilities.agility;
+    hero.strength =
+      basicCharacteristics.abilities.strength;
+    hero.intelligence =
+      basicCharacteristics.abilities.intelligence;
+    hero.luck = basicCharacteristics.abilities.luck;
+    hero.health = basicCharacteristics.abilities.health;
+    hero.damage = basicCharacteristics.abilities.damage;
+    hero.armor = basicCharacteristics.abilities.armor;
+   }
+
+   HERO.sumArmor();
+   HERO.sumDamage();
+   // cookie = document.cookie = JSON.stringify(HERO);
+   // log(cookie)
 }
 
+
+// log(localStorage.getItem())
 log(HERO);
-log(randomValue(20))
+log(randomValue(20));
