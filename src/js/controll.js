@@ -1,12 +1,15 @@
-"use strict"
-import { HERO } from "./game.js";
+"use strict";
+import { HERO, BASIC_CHARACTERISTICS_OF_CLASSES} from "./hero/settings-of-hero.js";
+import {randomValue, log} from './general/help-functions.js';
 
-const { log } = console;
+
 
 const controllButtonStart = document.querySelector("#controllButtonStart");
 const controlSelectRace = document.querySelector("#controlSelectRace");
 const controlSelectClass = document.querySelector("#controlSelectClass");
 const controlSelectName = document.querySelector("#controlSelectName");
+const popupInfo = document.querySelector(".main-alert-info");
+const backgroundBlack = document.querySelector(".background_color_black");
 
 controllButtonStart.addEventListener("click", () => {
   if (
@@ -14,7 +17,8 @@ controllButtonStart.addEventListener("click", () => {
     controlSelectClass.value === "Empty" ||
     controlSelectName.value === ""
   ) {
-    alert("Для продолжения игры вы должны выбрать класс, расу и имя!");
+    popupInfo.classList.add("active");
+    backgroundBlack.classList.add("visible");
   }
   HERO.class = controlSelectClass.value;
   HERO.race = controlSelectRace.value;
@@ -22,44 +26,28 @@ controllButtonStart.addEventListener("click", () => {
   setClasses(controlSelectClass.value);
 });
 
-class BasicCharacteristicsOfClasses {
-  constructor(classOfHero, damage, intelligence, strength, agility, armor) {
-    this.classOfHero = classOfHero;
-    this.characteristics = {
-      
-    }
-   //  this.damage = damage;
-   //  this.intelligence = intelligence;
-   //  this.strength = strength;
-   //  this.agility = agility;
-   //  this.armor = armor;
-   //  this.equip = {
-   //    weapon: {
-   //      name: null,
-   //      damage: 0,
-   //      critChance: 1,
-   //    },
-   //    arms: {
-   //      name: null,
-   //      armor: 0,
-   //    },
-   //  };
-  }
+backgroundBlack.addEventListener("click", () => {
+  backgroundBlack.classList.remove("visible");
+  document.querySelector(".main-alert-info").classList.remove("active");
+});
 
-}
+
 
 function setClasses(classOfHero) {
   let value = classOfHero;
-  // log(obj)
+  log(value)
   if (value === "Маг") {
-    HERO.totalDamage = obj.damage;
-    HERO.totalArmor = obj.armor;
-    HERO.characteristics.agility = obj.agility;
-    HERO.characteristics.strength = obj.strength;
-    HERO.characteristics.intelligence = obj.intelligence;
+   //  HERO.totalDamage = obj.damage;
+   //  HERO.totalArmor = obj.armor;
+
+   // BASIC_CHARACTERISTICS_OF_CLASSES
+    HERO.abilities.agility = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.agility;
+    HERO.abilities.strength = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.strength;
+    HERO.abilities.intelligence = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.intelligence;
+    HERO.abilities.luck = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.luck;
+    HERO.abilities.health = BASIC_CHARACTERISTICS_OF_CLASSES.magician.abilities.health;
   }
 }
 
 log(HERO);
-// log({...})
-// log(controllButtonStart, controlSelectRace, controlSelectClass)
+log(randomValue(20))

@@ -2,46 +2,9 @@ const {log} = console;
 
 // sleep for update opponents
 
-export const HERO = {
-   name: null,
-   health: null, 
-   level: 1,
-   experience: {
-      have: 0,
-      need: 100,
-   }, 
-   totalArmor: 0,
-   totalDamage: 0,
-   race: null,
-   characteristics:{
-      strength: null,
-      agility: null,
-      intelligence: null,
-   },
-   luck: null,
-   class: null,
-   equip:{
-      weapon:{
-         name: null,
-         damage: 0,
-         critChance: 1,
-      },
 
-      arms:{
-         name: null,
-         armor: 0, 
-      },
-   },
-   capabilities: {
-      classAbilities: null,
-      magicAbilitie: null,
-   },
-}
 
-const HERO_BAG = {
-   weapon:{},
-   arms:{},
-}
+
 
 
 
@@ -85,15 +48,15 @@ function levelUp(hero){
 
 }
 
-function basicCharacterSettings(hero){
-   if(hero.race === 'human' && hero.class === 'warrior'){
-      hero.armor = 5;
-      hero.strength = 12;
-      hero.agility = 7;
-      hero.luck = 0.2;
-      hero.intelligence = 3; 
-   }
-}
+// function basicCharacterSettings(hero){
+//    if(hero.race === 'human' && hero.class === 'warrior'){
+//       hero.armor = 5;
+//       hero.strength = 12;
+//       hero.agility = 7;
+//       hero.luck = 0.2;
+//       hero.intelligence = 3; 
+//    }
+// }
 
 function basicCharacterWeapons(hero){
    if(hero.race === 'human' && hero.class === 'warrior'){
