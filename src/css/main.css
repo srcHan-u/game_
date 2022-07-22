@@ -1,5 +1,18 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .body {
   padding: 20px 0px;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.body_start {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.start-game {
   position: relative;
 }
 
@@ -10,9 +23,14 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .controll-side {
-  -webkit-box-shadow: 0px 0px 5px;
-          box-shadow: 0px 0px 5px;
-  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  color: #fff;
 }
 .controll-side__heading {
   text-align: center;
@@ -68,6 +86,37 @@
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+.game-scene__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+.characteristics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  padding: 15px;
+}
+.characteristics__left-side {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+.characteristics__right-side {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
 }
 
 .main-alert-info {

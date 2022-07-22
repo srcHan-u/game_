@@ -1,3 +1,6 @@
+import { randomValue, log, cloneOfObject} from "../general/help-functions.js";
+
+
 export const HERO = {
   name: null,
   level: 1,
@@ -103,3 +106,5 @@ export const BASIC_CHARACTERISTICS_OF_CLASSES = {
   },
 };
 // warrior hunter archer knight magician
+
+log(HERO)

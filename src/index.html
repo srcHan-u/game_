@@ -5,87 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>Game</title>
+    <title>Start view</title>
   </head>
-  <body class="body">
-    <section class="main-scene">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <div class="col-md-8">
-            <button type="button" class="btn btn-primary btn-sm">
-              Primary
-            </button>
-            <div class="rectangle rectangle_red" id="rectangleRed"></div>
-            <div class="rectangle rectangle_blue" id="rectangleBlue"></div>
-            <div class="message">
-              <p class="message__text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Placeat sit, saepe sint eos iste id itaque distinctio vel et?
-                Alias sunt temporibus harum eos libero amet, odit nobis vel
-                dolore.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="main-scene__controll controll-side controll-side_hide">
-              <div class="controll-side__heading">Controll</div>
-              <form
-                class="controll-side__form form-controll"
-                action="#"
-                method="post"
-              >
-                <div>Выберите имя:</div>
-                <input
-                  class="form-controll__name form-control form-control-sm"
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  id="controlSelectName"
-                />
-                <div>Выберите расу:</div>
-                <select
-                  class="form-select form-select-sm"
-                  aria-label="choice race"
-                  id="controlSelectRace"
-                >
-                  <option value="Empty" aria-checked=""></option>
-                  <option value="Эльф">Эльф</option>
-                  <option value="Человек">Человек</option>
-                  <option value="Орк">Орк</option>
-                  <option value="Алгорец">Алгорец</option>
-                  <option value="Гном">Гном</option>
-                </select>
-                <div>Выберите класс:</div>
-                <select
-                  class="form-select form-select-sm"
-                  aria-label="choice class"
-                  id="controlSelectClass"
-                >
-                  <option value="Empty" aria-checked=""></option>
-                  <option value="Воин">Воин</option>
-                  <option value="Маг">Маг</option>
-                  <option value="Лучник">Лучник</option>
-                  <option value="Охотник">Охотник</option>
-                  <option value="Рыцарь">Рыцарь</option>
-                </select>
+  <body class="body body_start">
+    <section class="start-game">
+      <div class="container-sm">
+        <div class="main-scene__controll controll-side controll-side_hide">
+          <div class="controll-side__heading">Controll</div>
+          <form
+            class="controll-side__form form-controll"
+            action="#"
+            method="post"
+          >
+            <div>Выберите имя:</div>
+            <input
+              class="form-controll__name form-control form-control-sm"
+              type="text"
+              name="name"
+              placeholder="name"
+              id="controlSelectName"
+            />
+            <div>Выберите расу:</div>
+            <select
+              class="form-select form-select-sm"
+              aria-label="choice race"
+              id="controlSelectRace"
+            >
+              <option value="Empty" aria-checked=""></option>
+              <option value="Эльф">Эльф</option>
+              <option value="Человек">Человек</option>
+              <option value="Орк">Орк</option>
+              <option value="Алгорец">Алгорец</option>
+              <option value="Гном">Гном</option>
+            </select>
+            <div>Выберите класс:</div>
+            <select
+              class="form-select form-select-sm"
+              aria-label="choice class"
+              id="controlSelectClass"
+            >
+              <option value="Empty" aria-checked=""></option>
+              <option value="Воин">Воин</option>
+              <option value="Маг">Маг</option>
+              <option value="Лучник">Лучник</option>
+              <option value="Охотник">Охотник</option>
+              <option value="Рыцарь">Рыцарь</option>
+            </select>
 
-                <button
-                  type="button"
-                  class="btn btn-outline-dark btn-lg"
-                  id="controllButtonStart"
-                >
-                  Start
-                </button>
-              </form>
-            </div>
-          </div>
+            <button
+              type="button"
+              class="btn btn-outline-light btn-lg"
+              id="controllButtonStart"
+            >
+              Start
+            </button>
+          </form>
         </div>
       </div>
+      <!-- <div class="container-xxl"></div> -->
     </section>
     <!-- alert -->
+
     <div class="main-alert-info">
       <div class="alert alert-info" role="alert">
         Для продолжения игры вы должны выбрать класс, расу и имя!
@@ -94,11 +77,12 @@
 
     <div class="background background_color_black"></div>
 
-    <script src="./js/game.js" type="module"></script>
+    <script src="./js/start-game.js" type="module"></script>
+    <!-- <script src="./js/game.js" type="module"></script>
     <script src="./js/controll.js" type="module"></script>
     <script src="./js/hero/settings-of-hero.js" type="module"></script>
     <script src="./js/enemies/settings-of-enemies.js" type="module"></script>
-    <script src="./js/scenes/settings-of-scenes.js" type="module"></script>
+    <script src="./js/scenes/settings-of-scenes.js" type="module"></script> -->
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
